@@ -1,0 +1,1286 @@
+[
+    {
+        "id": "abce9817df3e387a",
+        "type": "tab",
+        "label": "Flow 8",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "15101d2d.9fdf53",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Oi, eu sou a Alicia, Sou a assistente virtual do senhor Fernando Veiga. Essa é uma ligação para a aplicação, By Safe",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11964614041",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "9c976ad9.e61bf8"
+            ]
+        ]
+    },
+    {
+        "id": "9c976ad9.e61bf8",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "52779150.e45ef"
+            ]
+        ]
+    },
+    {
+        "id": "52779150.e45ef",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 140,
+        "wires": [
+            [
+                "1b2d719f.378fee"
+            ]
+        ]
+    },
+    {
+        "id": "1b2d719f.378fee",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7cd7d5ea.3a6dfc",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "Disparo Marco",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Tem pobre ligando pra mim",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11961725707",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 380,
+        "wires": [
+            [
+                "e95c5a16.7145f8"
+            ]
+        ]
+    },
+    {
+        "id": "e95c5a16.7145f8",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "5f1b7d95.c255a4"
+            ]
+        ]
+    },
+    {
+        "id": "5f1b7d95.c255a4",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "b0fd77b.8647b88"
+            ]
+        ]
+    },
+    {
+        "id": "b0fd77b.8647b88",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d694138f.a5a5e",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 460,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ecb44c91.aafde",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "Disparo Erick",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Acabei de roubar todas as suas senhas e seus cashs no Banco",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11969803385",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "d43406c.c35aff8"
+            ]
+        ]
+    },
+    {
+        "id": "d43406c.c35aff8",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 600,
+        "wires": [
+            [
+                "ae4f429f.c22df"
+            ]
+        ]
+    },
+    {
+        "id": "ae4f429f.c22df",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 600,
+        "wires": [
+            [
+                "d97adcf5.13a47"
+            ]
+        ]
+    },
+    {
+        "id": "d97adcf5.13a47",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d0c84e51.10d86",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 460,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "f0d08899.db5068",
+        "type": "http in",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "url": "/webhook/chamadas",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "1b2d719f.378fee"
+            ]
+        ]
+    },
+    {
+        "id": "19b7405b.98c45",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "Disparo giovanna",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Chama seu pai, Avisa que ele ta atrazado para uma call",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11989607455",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 780,
+        "wires": [
+            [
+                "bcffa910.80eb98"
+            ]
+        ]
+    },
+    {
+        "id": "bcffa910.80eb98",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 780,
+        "wires": [
+            [
+                "dfc636f5.3d5428"
+            ]
+        ]
+    },
+    {
+        "id": "dfc636f5.3d5428",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 780,
+        "wires": [
+            [
+                "a0af8387.8bac1"
+            ]
+        ]
+    },
+    {
+        "id": "a0af8387.8bac1",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "956321d4.7ff35",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 460,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "11ba4042.3ce6b",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "victoria",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Tem pobre ligando pra mim",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "13997040735",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1020,
+        "wires": [
+            [
+                "dac84e7b.96c3a"
+            ]
+        ]
+    },
+    {
+        "id": "dac84e7b.96c3a",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 1020,
+        "wires": [
+            [
+                "823b1a93.10a728"
+            ]
+        ]
+    },
+    {
+        "id": "823b1a93.10a728",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 1020,
+        "wires": [
+            [
+                "decd430c.9daa3"
+            ]
+        ]
+    },
+    {
+        "id": "decd430c.9daa3",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "8404e1b2.6127e",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 460,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "599c8007.50837",
+        "type": "http in",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "url": "/webhook/chamadas",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 1080,
+        "wires": [
+            [
+                "decd430c.9daa3"
+            ]
+        ]
+    },
+    {
+        "id": "d7a4125d.dcd21",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "Elvira",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Só passando pra te desejar um bom dia por meio de tecnologia. Assinado Julia",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11945492338",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1240,
+        "wires": [
+            [
+                "8944a96f.9ab928"
+            ]
+        ]
+    },
+    {
+        "id": "8944a96f.9ab928",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 1240,
+        "wires": [
+            [
+                "141c9c96.e3f543"
+            ]
+        ]
+    },
+    {
+        "id": "141c9c96.e3f543",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 1240,
+        "wires": [
+            [
+                "8f4c4a24.991698"
+            ]
+        ]
+    },
+    {
+        "id": "8f4c4a24.991698",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "2cb42570.9cc87a",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 460,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "a0235a08.16a618",
+        "type": "http in",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "url": "/webhook/chamadas",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 1300,
+        "wires": [
+            [
+                "8f4c4a24.991698"
+            ]
+        ]
+    },
+    {
+        "id": "de00a7e9.36b188",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "só passando pra desejar um bom dia.",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11964589884",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1480,
+        "wires": [
+            [
+                "3d3a084a.e8adc8"
+            ]
+        ]
+    },
+    {
+        "id": "3d3a084a.e8adc8",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 1480,
+        "wires": [
+            [
+                "24fff990.654f76"
+            ]
+        ]
+    },
+    {
+        "id": "24fff990.654f76",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 530,
+        "y": 1480,
+        "wires": [
+            [
+                "f2c3ddd6.197e1"
+            ]
+        ]
+    },
+    {
+        "id": "f2c3ddd6.197e1",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "7780ad44.0243c4",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 460,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "66ce1816.9de108",
+        "type": "http in",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "url": "/webhook/chamadas",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 1540,
+        "wires": [
+            [
+                "f2c3ddd6.197e1"
+            ]
+        ]
+    },
+    {
+        "id": "e8be9669.a10f38",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Acabaram de abrir um chamado pra vc da PUC",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "13982081553",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1720,
+        "wires": [
+            [
+                "6994c0fb.436a4"
+            ]
+        ]
+    },
+    {
+        "id": "6994c0fb.436a4",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 360,
+        "y": 1720,
+        "wires": [
+            [
+                "be21d07e.596af"
+            ]
+        ]
+    },
+    {
+        "id": "be21d07e.596af",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 530,
+        "y": 1720,
+        "wires": [
+            [
+                "ab67e4f9.f9d728"
+            ]
+        ]
+    },
+    {
+        "id": "ab67e4f9.f9d728",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "665458e6.be7978",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 460,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "43a58f1d.e9057",
+        "type": "http in",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "url": "/webhook/chamadas",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 1780,
+        "wires": [
+            [
+                "ab67e4f9.f9d728"
+            ]
+        ]
+    },
+    {
+        "id": "68e9056c.8fdd8c",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "obrigado a todos por terem participado da nossa aula",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11954001992",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 2020,
+        "wires": [
+            [
+                "af352912.7b2458"
+            ]
+        ]
+    },
+    {
+        "id": "af352912.7b2458",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 380,
+        "y": 2020,
+        "wires": [
+            [
+                "c9e6ca1c.ab2478"
+            ]
+        ]
+    },
+    {
+        "id": "c9e6ca1c.ab2478",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 2020,
+        "wires": [
+            [
+                "e479b505.7050e8"
+            ]
+        ]
+    },
+    {
+        "id": "e479b505.7050e8",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "30f445e.1d4c1ba",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 480,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "dc811a78.12b008",
+        "type": "http in",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "url": "/webhook/chamadas",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 2080,
+        "wires": [
+            [
+                "e479b505.7050e8"
+            ]
+        ]
+    },
+    {
+        "id": "8a61f430.b149c8",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "Pablo Ascenty",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Vi que você está pedindo ligação para a coisinha, mas eu sou a Júlia Assistente Virtual da Zero Treze, pode falar comigo se quiser.",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "19984125815",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 2260,
+        "wires": [
+            [
+                "db093b20.3cb278"
+            ]
+        ]
+    },
+    {
+        "id": "db093b20.3cb278",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 380,
+        "y": 2260,
+        "wires": [
+            [
+                "6581ec6a.6c9604"
+            ]
+        ]
+    },
+    {
+        "id": "6581ec6a.6c9604",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 550,
+        "y": 2260,
+        "wires": [
+            [
+                "fc096685.07d3b8"
+            ]
+        ]
+    },
+    {
+        "id": "fc096685.07d3b8",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "b9454a41.e1d358",
+        "type": "http in",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "url": "/webhook/chamadas",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 2320,
+        "wires": [
+            [
+                "fc096685.07d3b8"
+            ]
+        ]
+    },
+    {
+        "id": "f3c94d17.5a492",
+        "type": "inject",
+        "z": "abce9817df3e387a",
+        "name": "Disparo Lucas",
+        "props": [
+            {
+                "p": "payload.texto",
+                "v": "Acabei de roubar todas as suas senhas e seus cashs no Banco",
+                "vt": "str"
+            },
+            {
+                "p": "payload.cel",
+                "v": "11993401123",
+                "vt": "str"
+            },
+            {
+                "p": "headers.Access-Token",
+                "v": "b4bb966b67e5ad9aca0f928b8c248283",
+                "vt": "str"
+            },
+            {
+                "p": "url",
+                "v": "https://voice-app.zenvia.com/tts",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 950,
+        "y": 460,
+        "wires": [
+            [
+                "c2b6c6d1.c9a538"
+            ]
+        ]
+    },
+    {
+        "id": "c2b6c6d1.c9a538",
+        "type": "template",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"numero_destino\": \"{{payload.cel}}\",\n    \"mensagem\": \"{{payload.texto}}\",\n    \"resposta_usuario\": false,\n    \"tipo_voz\": \"br-Vitoria\",\n    \"bina\": \"1340423300\",\n    \"gravar_audio\": false,\n    \"detecta_caixa\": true,\n    \"bina_inteligente\": false\n}",
+        "output": "json",
+        "x": 1140,
+        "y": 460,
+        "wires": [
+            [
+                "5176fec0.c1641"
+            ]
+        ]
+    },
+    {
+        "id": "5176fec0.c1641",
+        "type": "http request",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1330,
+        "y": 460,
+        "wires": [
+            [
+                "f65b94cb.416eb8"
+            ]
+        ]
+    },
+    {
+        "id": "f65b94cb.416eb8",
+        "type": "debug",
+        "z": "abce9817df3e387a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1490,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6dd12b96.8a5334",
+        "type": "comment",
+        "z": "abce9817df3e387a",
+        "name": "Disparo de mensagem de voz por ligação",
+        "info": "",
+        "x": 1240,
+        "y": 400,
+        "wires": []
+    }
+]
